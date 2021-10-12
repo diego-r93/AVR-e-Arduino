@@ -3,7 +3,11 @@
 # Build Directories
 [Dd]ebug/
 [Rr]elease/
+[Pp]rofiles/
+
+# Visual Studio Settings
 .vs/
+*.vssettings
 
 # Build Results
 *.o
