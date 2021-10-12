@@ -1,0 +1,41 @@
+;
+; Exe_5.8_b.asm
+;
+; Created: 11/08/2020 19:45:20
+; Author : diego
+;
+
+
+; Replace with your application code
+
+.def AUX = R20
+.ORG 0x000
+
+INICIO:
+	LDI R16,0xFF
+	OUT DDRD,R16
+	STS UCSR0B,R1
+			
+PRINCIPAL:	
+	LDI AUX,0xFF		
+	
+LOOP:
+	OUT PORTD,AUX
+	RCALL ATRASO
+	LSR AUX
+	BRNE LOOP
+
+	OUT PORTD,AUX
+	RCALL ATRASO
+	RJMP  PRINCIPAL
+	
+ATRASO:
+	LDI R19,81
+VOLTA:
+	DEC  R17
+	BRNE VOLTA
+	DEC  R18
+	BRNE VOLTA
+	DEC  R19
+	BRNE VOLTA
+	RET

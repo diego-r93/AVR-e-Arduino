@@ -1,0 +1,26 @@
+## Ignore Atmel Studio temporary files and build results
+
+# Build Directories
+[Dd]ebug/
+[Rr]elease/
+.vs/
+
+# Build Results
+*.o
+*.d
+*.eep
+*.elf
+*.hex
+*.map
+*.srec
+*.lss
+*.mk
+
+# Atmel Specific Files
+*.xml
+*.cproj
+*.asmproj
+
+# User Specific Files
+*.atsuo
+*.atsln

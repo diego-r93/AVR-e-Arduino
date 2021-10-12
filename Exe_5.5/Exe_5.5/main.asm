@@ -1,0 +1,34 @@
+;
+; Exe_5.5.asm
+;
+; Created: 11/08/2020 14:40:03
+; Author : diego
+;
+
+
+; Replace with your application code
+
+.equ LED = PB5
+.ORG 0x000
+
+INICIO:
+    LDI R16, 0xFF
+	OUT DDRB, R16
+
+PRINCIPAL:
+	SBI   PORTB, LED
+	RCALL ATRASO
+	CBI   PORTB, LED
+	RCALL ATRASO
+	RJMP  PRINCIPAL
+	
+ATRASO:
+	LDI R19, 81
+VOLTA:
+	DEC  R17
+	BRNE VOLTA
+	DEC  R18
+	BRNE VOLTA
+	DEC  R19
+	BRNE VOLTA
+	RET
